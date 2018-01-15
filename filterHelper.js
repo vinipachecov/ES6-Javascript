@@ -38,3 +38,5 @@ console.log(products.filter((prod) => {
 console.log(products.filter((product) => {
     return product.type === 'fruit' && product.quantity > 0 && product.price < 10;
 }));
+
+//

@@ -18,7 +18,7 @@ var totalDistance = trips.reduce((sum,trip) => {
 // Hint: Don't forget to return the accumulator object (the first argument 
 // to the iterator function)
 
-var desks = [
+const desks = [
   { type: 'sitting' },
   { type: 'standing' },
   { type: 'sitting' },
@@ -26,7 +26,15 @@ var desks = [
   { type: 'standing' }
 ];
 
-console.log(desks.reduce((prev,desk) => {
-  
-}, []));
 
+const deskTypes = desks.reduce(function (prev,desk) {
+  console.log(prev, desk);  
+  if (desk.type === 'sitting') {
+    prev.sitting++;
+  } else {
+    prev.standing++
+  }
+  return prev;    
+}, { sitting: 0, standing: 0 });
+
+console.log(deskTypes);
